@@ -369,7 +369,7 @@ function createRouter(options) {
           toRoutes = nextRoutes;
         }
 
-        var transition = new Transition(path, this.replaceWith.bind(this, path));
+        var transition = new Transition(path, this.replaceWith.bind(this, path), options.transitionContext);
         pendingTransition = transition;
 
         var fromComponents = mountedComponents.slice(prevRoutes.length - fromRoutes.length);

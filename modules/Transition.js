@@ -9,10 +9,11 @@ var Redirect = require('./Redirect');
  * The willTransitionTo and willTransitionFrom handlers receive
  * an instance of this class as their first argument.
  */
-function Transition(path, retry) {
+function Transition(path, retry, context) {
   this.path = path;
   this.abortReason = null;
   this.retry = retry.bind(this);
+  this.context = context;
 }
 
 Transition.prototype.abort = function (reason) {
